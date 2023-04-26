@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+    <h1 id="tittle">CARTELERA</h1>
+    <h1 id="admintittle"><a href="/menu.html">Administrador</a></h1>
+
+    <div id="principal">
+        <form action="/views/cartelera.ejs/buscar" method="post">
+            <input type="text" name="buscar" placeholder="Teclea la pelicula a buscar">
+            <input class="botonBuscar" type="submit" placeholder="Buscar" value="Buscar">
+        </form>
+        <br>
+        <a href="#Tabla"><button class="Bajar">Ver catalogo</button></a>
+
+        <center> 
+            <table id="Tabla" class="table-fill" border="1" style="text-align: center;">
+                <tr>
+                    <th scope="col" style="text-align:center;"> NOMBRE:</th>
+                    <th scope="col" style="text-align:center;"> AUTOR:</th>
+                    <th scope="col" style="text-align:center;"> AÑO: </th>
+                </tr>
+                <%moviesList.forEach(movie => {%>
+                <tr>
+                    <td><%= movie.nombre %></a></td><br>
+                    <td><%= movie.autor %></a></td><br>
+                    <td><%= movie.ano %></a></td><br>
+                </tr>
+                <%})%>
+            </table>
+        </center>
+    </div>
+      
+</body>
+</html>
